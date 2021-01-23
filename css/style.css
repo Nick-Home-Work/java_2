@@ -1,0 +1,99 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	border-bottom: 1px solid #808080;
+}
+
+.container {
+	margin: 0 auto;
+	width: 900px;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+
+}
+
+.menu {
+	width: 500px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+
+}
+
+.menu ul li {
+	text-decoration: none;
+	display: inline-block;
+}
+
+.menu ul li a {
+	text-decoration: none;
+	font-size: 18px;
+	margin-left: 30px;
+	color: #454545;
+}
+
+.backet {
+	float: right;
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+}
+
+.btn-cart,
+.by-btn {
+	margin-left: 10px;
+	padding: 15px;
+	background-color: #f16d7f;
+	color: white;
+	border: none;
+}
+
+.product-item .telega {
+	width: 30px;
+	height: auto;
+}
+
+.products {
+	width: 900px;
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+
+}
+
+.product-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 200px;
+	margin: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+	border-bottom: 1px solid #808080;
+}
+
+.product-item h3 {
+	font-size: 30px;
+	margin-top: 20px;
+}
+
+.product-item p {
+	font-size: 20px;
+}
+
+.by-btn {
+	margin-left: 10px;
+	padding: 15px;
+	background-color: #f16d7f;
+	color: white;
+	border: none;
+}
+
+.products img {
+	width: 200px;
+	height: 150px;
+}
