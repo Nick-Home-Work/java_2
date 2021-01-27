@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Интернет-магазин</title>
+	<meta charset="UTF-8">
+	<title>Интернет-магазин</title>
+	<link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
-<header>
-    <button class="btn-cart" type="button">Корзина</button>
-</header>
-<main>
-    <div class="products"></div>
-</main>
-<script src="./js/main.js"></script>
+	<header>
+		<div class="container">
+			<nav class="menu">
+				<ul>
+					<li class='active'><a href="index.html">Товар</a></li>
+					<li><a href="product.html">Список товаров</a></li>
+				</ul>
+			</nav>
+			<div class='backet'>
+				<img class="telega" src="img/telega.png" alt="">
+				<button class="btn-cart" type="button">
+					Корзина
+				</button>
+			</div>
+			<!--<button class="btn-cart" type="button">Корзина</button>-->
+		</div>
+	</header>
+	<main>
+		<div class="products"></div>
+	</main>
+	<script src="./js/main.js"></script>
 </body>
+
 </html>
