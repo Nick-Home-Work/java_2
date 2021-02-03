@@ -3,14 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 </head>
 <body>
 <header>
-    <button class="btn-cart" type="button">Корзина</button>
+<div class="container">
+    <div class="logo">Интернет-магазин</div>
+    <!--<div class="cart">
+	        <button class="btn-cart" type="button">Корзина</button>
+        <div class="cart-block invisible"></div>
+    </div>-->
+	<div class='backet'>
+	            <div class="cart">
+	<form class="search-form">
+				<input class="search-field" placeholder="Search for Item..." type="text">
+				<button class="btn-search" type="submit">
+					<i class="fas fa-search"></i>
+				</button>
+			</form>
+
+       <!-- <button class="btn-cart" type="button">Корзина</button>
+        <div class="cart-block invisible"></div>-->
+    </div>
+				<img class="telega" src="img/telega.png" alt="">
+				<button class="btn-cart" type="button">
+					Корзина
+				</button>
+
+			</div>
+	</div>
 </header>
 <main>
+    <div class="cart-block invisible">
+	<button class="btn-cart" type="button">
+					Оплатить
+				</button>
+	</div>
     <div class="products"></div>
 </main>
-<script src="./js/main.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
