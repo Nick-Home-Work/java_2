@@ -1,16 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Интернет-магазин</title>
+	<meta charset="UTF-8">
+	<title>Интернет-магазин</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<header>
-    <button class="btn-cart" type="button">Корзина</button>
-</header>
-<main>
-    <div class="products"></div>
-</main>
-<script src="./js/main.js"></script>
+	<div id="app">
+		<header>
+			<div class="container">
+				<div class="logo">Интернет-магазин</div>
+
+				<div class='backet'>
+					<div class="cart">
+						<form action="#" class="search-form" @submit.prevent="filter">
+                <input type="text" class="search-field" v-model="userSearch">
+                <button class="btn-search" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+					</div>
+					<img class="telega" src="img/telega.png" alt="">
+					<button class="btn-cart" type="button" @click="show=!show">
+						Корзина
+					</button>
+					<div v-if="show" class="cart-block ">
+						<h3 v-if="cart.length == 0" >Корзина пуста</h3>
+
+						<div  class="product-item" v-for="item of cart" :key="item.id_product">
+								<div class="desc_backet">
+								<div>
+									<h3>{{item.product_name}}</h3>
+									<p>Количество:{{item.quantity}}</p>
+									<p>{{item.price}}р за шт.</p>
+								</div>
+								<div>
+									<b><p>итого:{{item.price * item.quantity}} </p></b>
+									<button
+									 class="del-btn"
+									 @click="deletePositionCart(item)"
+									 ><i class="fas fa-trash-alt"></i></button>
+								</div>
+							</div>
+						</div>
+
+						<button class="btn-cart" type="button"
+						>
+							Оплатить
+						</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="products" >
+				<div class="product-item"  v-for="product of filtered" :key="product.id_product">
+					<img :src="product.src" alt="Some img">
+					<div class="desc">
+						<h3>{{product.product_name}}</h3>
+						<p>{{product.price}}р</p>
+						<div class='backet'>
+							<img class="telega" src="img/telega.png" alt="">
+							<button
+							 class="buy-btn" @click="addProduct(product)"
+							 >Купить</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/main.js"></script>
 </body>
+
 </html>
