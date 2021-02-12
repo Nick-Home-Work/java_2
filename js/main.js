@@ -1,25 +1,21 @@
-const products = [
-    {id: 1, title: 'Notebook', price: 20000},
-    {id: 2, title: 'Mouse', price: 1500},
-    {id: 3, title: 'Keyboard', price: 5000},
-    {id: 4, title: 'Gamepad', price: 4500},
-];
+const API = 'http://localhost/project/';
 
-const renderProduct = (title, price, img = '') => {
-    return `<div class="product-item">
-                <h3>${title}</h3>
-                <p>${price}</p>
-                <button class="by-btn">Добавить в корзину</button>
-              </div>`;
-};
+const app = new Vue({
+    el: '#app',
+    data: {
+        userSearch: '',
+    },
+    methods: {
+        getJson(url){
+            return fetch(url)
+                .then(result => result.json())
+                .catch(error => {
+                   this.$refs.errorcomp.setError(error);
+                })
+        },
+    },
+    mounted() {
+       // console.log(this);
+    }
+});
 
-const renderProducts = (list) => {
-    const productList = list.map(function (product) {
-        return renderProduct(product.title, product.price);
-    });
-    console.log(productList);
-    document.querySelector('.products').innerHTML = productList;
-    // insertAdjacentHTML();
-};
-
-renderProducts(products);
